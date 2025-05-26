@@ -11,3 +11,7 @@ class TestCliMethods(unittest.TestCase):
         result = runner.invoke(cli.app, ["--version"])
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(f"{__app_name__} version {__version__}\n", result.stdout)
+
+    # def test_start_timer(self):
+    #     result = runner.invoke(cli.app, ["start", 1])
+    #     self.assertEqual(f"")
