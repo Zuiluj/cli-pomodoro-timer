@@ -1,5 +1,7 @@
 import setuptools
 
+REQUIREMENTS = [i.strip() for i in open("requirements.txt").readlines()]
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
@@ -13,6 +15,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Zuiluj/cli-pomodoro-timer",
     packages=setuptools.find_packages(),
+    install_requires=REQUIREMENTS,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
