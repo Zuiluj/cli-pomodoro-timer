@@ -42,7 +42,13 @@ def start(
             help="Start timer by giving duration in mins",
         ),
     ] = 25,
+    msg: Annotated[
+        str, typer.Option(help="The message to show when concentrating.")
+    ] = "",
+    msg_done: Annotated[
+        str, typer.Option(help="Message to show when session is done.")
+    ] = "",
 ) -> None:
     duration_in_secs = duration_in_mins * 60
     runner = Pmodoro()
-    runner.timer(duration_in_secs)
+    runner.timer(duration_in_secs, msg, msg_done)
