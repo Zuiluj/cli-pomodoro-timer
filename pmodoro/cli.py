@@ -37,7 +37,7 @@ def main(
 @app.command()
 def start(
     duration_in_mins: Annotated[
-        int,
+        float,
         typer.Argument(
             help="Start timer by giving duration in mins",
         ),
