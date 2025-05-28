@@ -7,7 +7,7 @@ from pmodoro import __version__, __app_name__
 from pmodoro.pmdoro import Pmodoro
 
 
-app = typer.Typer()
+app = typer.Typer(rich_markup_mode="markdown")
 
 
 def _version_callback(value: bool):
@@ -48,7 +48,11 @@ def start(
     msg_done: Annotated[
         str, typer.Option(help="Message to show when session is done.")
     ] = "",
+    color_complete: Annotated[
+        str,
+        typer.Option(help="Color of the completed gauge. Word color or hex."),
+    ] = "green",
 ) -> None:
     duration_in_secs = duration_in_mins * 60
-    runner = Pmodoro()
+    runner = Pmodoro(color_complete)
     runner.timer(duration_in_secs, msg, msg_done)

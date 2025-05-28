@@ -4,7 +4,7 @@ from rich.progress import Progress
 from rich.table import Table
 
 
-class MyProgress(Progress):
+class PmodoroProgress(Progress):
     pass
     # def get_renderables(self):
     #     yield Panel(self.make_tasks_table(self.tasks))
