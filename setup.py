@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pmodoro",
-    version="0.1.0",
+    version="1.0.0",
     author="Juliuz Llanillo",
     author_email="christianllanillo@gmail.com",
     description="A Pomodoro timer in CLI",
